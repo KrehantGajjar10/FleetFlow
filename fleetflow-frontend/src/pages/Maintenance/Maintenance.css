@@ -1,0 +1,8 @@
+/* src/pages/Maintenance/Maintenance.css */
+.maintenance-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Reusing global registry-toolbar, table-container, data-table, and modal styles */

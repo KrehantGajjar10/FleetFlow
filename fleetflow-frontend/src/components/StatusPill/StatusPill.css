@@ -1,0 +1,30 @@
+/* src/components/StatusPill/StatusPill.css */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-pill.on-trip {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-pill.available {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-pill.in-shop {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-pill.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}

@@ -1,0 +1,53 @@
+/* src/pages/Login/Login.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color); /* Clean slate-50 background */
+}
+
+.login-card {
+  background-color: var(--card-bg); /* Pure white */
+  padding: 3rem; 
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-float); /* Makes the card look like it's floating high */
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.login-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 0.4rem; font-weight: 600; font-size: 0.85rem; color: var(--text-main); }
+.forgot-password { display: block; text-align: right; font-size: 0.85rem; margin-bottom: 1.5rem; font-weight: 500; }
+.toggle-register { text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 2rem; }
+.toggle-register span { color: var(--primary-color); cursor: pointer; font-weight: 600; }
+.toggle-register span:hover { color: var(--primary-hover); text-decoration: underline; }

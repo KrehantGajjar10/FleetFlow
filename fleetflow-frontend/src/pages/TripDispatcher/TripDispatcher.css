@@ -1,0 +1,19 @@
+/* src/pages/TripDispatcher/TripDispatcher.css */
+.dispatcher-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border: 1px solid #fca5a5;
+  text-align: center;
+}
+
+/* We reuse the table, toolbar, and modal styles from the global scope/previous pages */
