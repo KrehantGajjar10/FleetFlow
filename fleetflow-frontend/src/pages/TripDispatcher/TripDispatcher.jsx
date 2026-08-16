@@ -1,7 +1,8 @@
 // src/pages/TripDispatcher/TripDispatcher.jsx
 import React, { useState, useEffect } from 'react';
 import StatusPill from '../../components/StatusPill/StatusPill';
-import { fetchAvailableResources, createTrip } from '../../services/api'; // UPDATED
+import TripMap from '../../components/TripMap/TripMap'; // IMPORT OUR NEW MAP
+import { fetchAvailableResources, createTrip } from '../../services/api';
 import './TripDispatcher.css';
 
 const TripDispatcher = () => {
@@ -51,6 +52,11 @@ const TripDispatcher = () => {
         </div>
       </div>
 
+      {/* --- NEW: THE INTERACTIVE MAP --- */}
+      {!loading && trips.length > 0 && (
+        <TripMap trips={trips} />
+      )}
+
       <div className="table-container">
         <table className="data-table">
           <thead><tr><th>Trip ID</th><th>Fleet Type</th><th>Origin</th><th>Destination</th><th>Status</th></tr></thead>
@@ -68,7 +74,7 @@ const TripDispatcher = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <h2>New Trip Form</h2>
-            {error && <div className="error-message">{error}</div>}
+            {error && <div style={{color: 'red', marginBottom: '1rem', fontWeight: 'bold'}}>{error}</div>}
             <form onSubmit={handleDispatchTrip}>
               <div className="form-grid">
                 <div className="form-group full-width"><label>Select Vehicle</label>
@@ -85,12 +91,13 @@ const TripDispatcher = () => {
                 </div>
                 <div className="form-group"><label>Cargo Weight (Kg)</label><input type="number" name="cargoWeight" value={formData.cargoWeight} onChange={handleInputChange} required /></div>
                 <div className="form-group"><label>Estimated Fuel Cost (Rs)</label><input type="number" name="estimatedFuelCost" value={formData.estimatedFuelCost} onChange={handleInputChange} required /></div>
-                <div className="form-group"><label>Origin Address</label><input type="text" name="origin" value={formData.origin} onChange={handleInputChange} required /></div>
-                <div className="form-group"><label>Destination</label><input type="text" name="destination" value={formData.destination} onChange={handleInputChange} required /></div>
+                {/* TIP: Use one of the cities from our dictionary for origin/destination to see the pins! */}
+                <div className="form-group"><label>Origin (e.g. Mumbai)</label><input type="text" name="origin" value={formData.origin} onChange={handleInputChange} required /></div>
+                <div className="form-group"><label>Destination (e.g. Pune)</label><input type="text" name="destination" value={formData.destination} onChange={handleInputChange} required /></div>
               </div>
               <div className="modal-actions">
                 <button type="button" className="btn-cancel" onClick={() => setIsModalOpen(false)}>Cancel</button>
-                <button type="submit" className="btn-save">Confirm & Dispatch Trip</button>
+                <button type="submit" className="btn-save">Confirm & Dispatch</button>
               </div>
             </form>
           </div>
@@ -99,4 +106,5 @@ const TripDispatcher = () => {
     </div>
   );
 };
+
 export default TripDispatcher;
